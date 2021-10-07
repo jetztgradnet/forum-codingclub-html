@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>HTML - Die Sprache der Webseiten</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/white.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<style>
+			.reveal section p {
+				font-weight: normal !important;
+				font-size: 0.7em !important;
+			}
+
+			.reveal section pre code {
+				font-size: 0.7em !important;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h2>Was mach nun aber eine Menge von Seiten zum <b>Web</b></h2>
+					<p>
+					Bislang haben wir einen Text gestaltet und strukturiert.
+					</p>
+					<p>
+					Da hat das <b>Hyper</b> im Hypertext noch keine Rolle gespielt.<br> 
+					Und auch fremde Ressourcen haben wir bislang noch nicht eingebunden. 
+					</p>
+				</section>
+				<section>
+					<h2>Aus einem Text einen<br>Hyptertext machen</h2>
+					<h3>Das <b>A</b>nker - Tag</h3>
+					<small>&lt;a href="Hier steht die Adresse"&gt;Hier kommt der sichtbare Teil des Tags&lt;/a&gt;</small>
+				</section>
+				<section>
+					<h2>Absolute und Relative Adressen</h2>
+					Zuvor noch ein kurzer Ausflug in die Gestaltung von Adressen, die wir einbinden wollen.
+				</section>
+				<section>
+					<h2>Absolute Adresse</h2>
+					&lt;https://forum-mannheim.de/team/&gt;
+				</section>
+				<section>
+					<h2>Die Bestandteile</h2>
+					<section>
+						<h4>HTTPS</h4>
+						Das Protokoll
+					</section>
+					<section>
+						<h4>forum-mannheim</h4>
+						Die "Domain" der eigentliche Ankerpunkt der Datei
+					</section>
+					<section>
+						<h4>Die Top Level Domain</h4>
+						Zentral verwaltete Bereiche des WWW. Hier eine Länderdomain nach ISO 3166 Alpha 2
+						<p>
+							Weitere: org, mil, gov, edu, com, biz ...
+						</p>
+					</section>
+					<section>
+						<h4>team</h4>
+						eigene Unterbereiche, die der Webmaster selbst verwaltet.
+					</section>
+					<section>
+						<h4>Dateiname</h4>
+						Der ist hier nicht angegeben. In dem Fall zieht der Standard des Webserver meist index.html oder index.htm oder auch
+						je nach Konfiguration, index.phb oder index.pl
+					</section>
+				</section>
+				<section>
+					<h2>Relative Adressen</h2>
+					Beziehen sich auf den Webserver, auf man sich gerade befindet und geben die Position und den Namen des Datei 
+					innerhalb des aktuellen Webpräsenz an. 
+					<p>
+						<ul>
+							<li>Keine externe Adressauflösung</li>
+							<li>weniger Schreibarbeit</li>
+						</ul>
+					</p>
+				</section>
+				<section>
+					<h2>Bilder einbinden</h2>
+					&lt;img src="hier steht die Adresse zur Bilddatei"&gt;
+				</section>
+				<section>
+					<h2>IMG ist ein Leertag wie br</h2>
+					Es gibt kein Endetag und es wird nichts im eigentlichen Taginhalt erwartet. Alle Informationen
+					stehen in den Attributen des Tags.
+				</section>
+				<section>
+					<h4>Hilfsdateien einbinden</h4>
+					&lt;link rel="" href=""&gt;
+					<p>
+						Hiermit werden externe Dateien Teil der aktuellen HTML-Datei. <br>
+						Verwendung für CSS-Stylesheets oder für JavaScript Routinen
+					</p>
+				</section>
+				<section>
+					Hier könnte nun noch table kommen und es können weitere Tags wie cite, code, sub, sup, hr kommen. Das 
+					sollte man abhängig von der Zeit sein. Vor allem die Table Darstellung kann viel werden. 
+				</section>
+				<section>
+					<h2>Ausblick</h2>
+				</section>
+				<section>
+					<h2>Adressen</h2>
+					<ul>
+						<li><a href="https://www.w3schools.com/">https://www.w3schools.com/</a></li>
+						<li><a href="https://wiki.selfhtml.org/">https://wiki.selfhtml.org/</a></li>
+						<li><a href="revealjs.com">Diese Präsentationsumgebung</a></li>
+					</ul>
+				</section>
+			</div>
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				hash: true,
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/highlight/highlight.js' },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>

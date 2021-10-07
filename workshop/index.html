@@ -1,0 +1,1092 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>HTML - Die Sprache der Webseiten</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/white.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<style>
+			.reveal section p {
+				font-weight: normal !important;
+				font-size: 0.7em !important;
+			}
+
+			.reveal section pre code {
+				font-size: 0.7em !important;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h2>/forum/CodingClub<br>Wir gestalten eine Website</h2>
+					<p>
+					Wir wollen heute etwas darüber erfahren, wie man einen
+					Webauftritt erstellen und gestalten kann.
+					</p>
+					<p>
+					Dazu wollen wir uns mit den grundlegenden
+					Sprachen näher bekannt machen
+					</p>
+				</section>
+				<section>
+					Doch vorab: Wer ist denn heute so da
+					<p>
+					Stellt euch doch mal kur vor.<br>
+					Was uns beide interessiert:<br>
+					Habt Ihr Vorwissen - vielleicht schon mal programmiert?<br>
+					Was sind eure Erwartungen, was wollt ihr heute gerne erreichen?
+					</p>
+				</section>
+
+				<section>
+					Fragen zum Ablauf des Workshops?
+				</section>
+
+				<section>
+					<h2>Kurzer Hinweis</h2>
+
+					<p>
+						Der Großteil dieser Präsentation und des Workshop-Materials ist auf Deutsch, allerdings enthalten die
+						verwendeten Programmiersprachen viele englische Begriffe.<br>
+						Referenzen auf weiterführende Seiten sind sind wo möglich ebenfalls auf Deutsch, aber im Internet gibt es sehr viel
+						gute Dokumentation auf Englisch, insofern sind Englischkenntnisse von Vorteil ;-)
+					</p>
+
+					<img width="300px" src="bilder/Englische-Flagge.png">
+				</section>
+
+				<section>
+					<section>
+						Unser Computer heute
+					</section>
+
+					<section>
+						<a href="https://www.raspberrypi.org/products/raspberry-pi-4-model-b/"><img height="60px" src="bilder/RPi-Logo-Landscape.png"></a>
+						<br>
+						günstiger Mini-Computer (~35 EUR)<br>
+
+						<img height="400px" src="bilder/Raspberry-Pi-4.jpg">
+					</section>
+
+					<section>
+						<a href="https://de.wikipedia.org/wiki/Linux">Linux</a> (<a href="https://www.raspberrypi.org/downloads/raspbian/">Raspbian</a>)
+						<br>
+						<a href="https://de.wikipedia.org/wiki/Open_Source">Open Source</a>-<a href="https://de.wikipedia.org/wiki/Betriebssystem">Betriebssystem</a>
+						<br>
+						<img height="400px" src="bilder/Tux.png">
+						<br>
+					</section>
+				</section>
+
+				<section>
+					<h2>Worum es heute gehen wird</h2>
+					<img src="bilder/html5_CSS3.jpg" style="border-style: none;"/>
+				</section>
+
+				<section>
+					<h2>Doch eins nach dem Anderen</h2>
+					<section>
+					Zunächst ein Beispiel einer Seite "ohne alles"
+					</section>
+					<section>
+						<pre>
+Name: Hugo Giese
+Geboren: X.Y.1960
+In: Heidelberg
+Wohnhaft in: Eppelheim
+
+Meine Hobbies:
+Coding
+Webseiten
+Füllhalter
+Elektronik
+
+Weitere Interessen:
+Philosophie
+
+Obwohl nicht mehr der jüngsten Einer,
+macht es mir Spaß mich mit den aktuellen
+Themen der Informatik aber auch der
+Webentwicklung und da mit NODE und Javascript zu
+beschäftigen. Programmiersprachen: ABAP, Cobol,
+JavaScript, Perl habe ich schon benutzt
+						</pre>
+					</section>
+					<!-- <small>Hier wird umgeschaltet auf Anfang.html mit
+					einem Editor (nicht mit dem Browser)</small> -->
+				</section>
+				<section>
+					<h2>Nun Ihr</h2>
+					Baut eine Profilseite als reinen Text
+					mit einem Editor auf.
+				</section>
+				<section>
+					<h1>HTML</h1>
+					<ul>
+						<li><b>H</b>yper-</li>
+						<li><b>t</b>ext</li>
+						<li><b>M</b>arkup</li>
+						<li><b>L</b>anguage</li>
+					</ul>
+				</section>
+				<section>
+					<h1>Markup</h1>
+					Die Wikipedia sagt dazu:
+					<small>
+						Mit Auszeichnungssprachen werden Eigenschaften, Zugehörigkeiten und Darstellungsformen
+						von Abschnitten eines Textes [...] beschrieben.
+						[...]indem sie mit <b>Tags</b> markiert werden.
+					</small>
+					<small>
+						<a href="https://de.wikipedia.org/wiki/Auszeichnungssprache">(Quelle Wikipedia)</small></a></small>
+				</section>
+				<section>
+					<h2>Grundaufbau eines HTML-Dokuments</h2>
+					<section>
+					<small>01_Grundaufbau einer HTML-Seite.txt</small>
+					</section>
+					<section>
+						<pre><code><script type="text/template">
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charsset="utf-8" />
+        <title>Titel der Seite</title>
+    </head>
+    <body>
+        Hier ist der Inhalt
+    </body>
+</html>
+</script></code></pre>
+					</section>
+				</section>
+				<section>
+					<h2>Nun Ihr</h2>
+					Macht aus eurem Text ein HTML-Dokument indem
+					Ihr euren Text in den Body-Bereich der Grundstruktur
+					setzt, bzw. die Tags um den Text herum baut.
+				</section>
+				<section>
+					<h1>TAGS</h1>
+					Tags sind Kennzeichen, Markierungen, die einen Teil
+					des Textes Auszeichnen. Diese Tags bilden das Markup
+					in htMl und sollen die Struktur des
+					Dokuments steuern.
+				</section>
+				<section>
+					<h2>Regeln</h2>
+					<section>
+						Tags, die geöffnet werden müssen auch
+						wieder geschlossen werden.
+					</section>
+					<section>
+						Ausnahme: Leere Tags, die keinen Text
+						auszeichnen sondern für sich stehen
+					</section>
+					<section>
+						Tags steuern die STRUKTUR des Dokuments.
+						Sein Aussehen nur mittelbar
+						(kommen wir noch dazu)
+					</section>
+					<section>
+						Ausnahme: das Umbruchtag &lt;br&gt;
+					</section>
+				</section>
+				<section>
+					<h1>Grundelegende Tags</h1>
+					<section>
+						<h2>Überschriften</h2>
+						&lt;h1&gt; ... &lt;h6&gt;
+						Kennzeichnet einen Bereich als Überschrift
+						der Verschachtelungsstufe 1  - 6
+					</section>
+					<section>
+							<h2>&lt;section&gt;, &lt;div&gt;, &lt;p&gt;</h2>
+							Kennzeichnet einen Bereich als Kapitel,
+							Abschnitt oder Absatz.<br>
+							<small>
+							Diese Tags sind wichtig um zusammengehörige Bereiche
+							zu markieren.
+							</small>
+					</section>
+					<section>
+						<h2>&lt;br&gt;</h2>
+						Erzeugt einen Zeilenumbruch im Text.
+					</section>
+				</section>
+				<section>
+					<h2>Tags, die das aussehen etwas steuern</h2>
+					<section>
+						<h3>&lt;em&gt; oder &lt;I&gt;</h3>
+						Gibt den umschlossenen Text <em>kursiv</em> aus.
+					</section>
+					<section>
+						<h3>&lt;strong&gt; oder &lt;b&gt;</h3>
+						Gibt den umschlossenen Text in <b>fett</b> aus
+					</section>
+					<section>
+						<h3>&lt;small&gt;</h3>
+						Der umschlossene Text wird in einem kleineren Zeichensatz
+						ausgegeben.
+					</section>
+				</section>
+				<section>
+					<ul>
+						<li>&lt;section&gt;&lt;/section&gt;, &lt;div&gt;&lt;/div&gt;</li>
+						<li>&lt;p&gt;&lt;/p&gt;</li>
+						<li>&lt;br&gt;</li>
+						<li>&lt;em&gt;&lt;/em&gt; oder &lt;i&gt;&lt;/i&gt;</li>
+						<li>&lt;strong&gt;&lt;/strong&gt; oder &lt;b&gt;&lt;/b&gt;</li>
+						<li>&lt;small&gt;&lt;/small&gt;</li>
+					</ul>
+				</section>
+				<section>
+					<h1>Und nun Ihr</h1>
+					Verwendet die bislang bekannten Tags und schaut euch
+					euren Text im Browser an.
+				</section>
+				<section>
+					<h2>Was mach nun aber eine Menge von Seiten zum <b>Web</b></h2>
+					<p>
+					Bislang haben wir einen Text gestaltet und strukturiert.
+					</p>
+					<p>
+					Da hat das <b>Hyper</b> im Hypertext noch keine Rolle gespielt.<br>
+					Und auch fremde Ressourcen haben wir bislang noch nicht eingebunden.
+					</p>
+				</section>
+				<section>
+					<h2>Aus einem Text einen<br>Hyptertext machen</h2>
+					<h3>Das <b>A</b>nker - Tag</h3>
+					<small>&lt;a href="Hier steht die Adresse"&gt;Hier kommt der sichtbare Teil des Tags&lt;/a&gt;</small>
+				</section>
+				<section>
+					<h2>Absolute und Relative Adressen</h2>
+					Zuvor noch ein kurzer Ausflug in die Gestaltung von Adressen, die wir einbinden wollen.
+				</section>
+				<section>
+					<h2>Absolute Adresse</h2>
+					&lt;https://forum-mannheim.de/team/&gt;
+				</section>
+				<section>
+					<h2>Die Bestandteile</h2>
+					<section>
+						<h4>HTTPS</h4>
+						Das Protokoll
+					</section>
+					<section>
+						<h4>forum-mannheim</h4>
+						Die "Domain" der eigentliche Ankerpunkt der Datei
+					</section>
+					<section>
+						<h4>Die Top Level Domain</h4>
+						Zentral verwaltete Bereiche des WWW. Hier eine Länderdomain nach ISO 3166 Alpha 2
+						<p>
+							Weitere: org, mil, gov, edu, com, biz ...
+						</p>
+					</section>
+					<section>
+						<h4>team</h4>
+						eigene Unterbereiche, die der Webmaster selbst verwaltet.
+					</section>
+					<section>
+						<h4>Dateiname</h4>
+						Der ist hier nicht angegeben. In dem Fall zieht der Standard des Webserver meist index.html oder index.htm oder auch
+						je nach Konfiguration, index.phb oder index.pl
+					</section>
+				</section>
+				<section>
+					<h2>Relative Adressen</h2>
+					Beziehen sich auf den Webserver, auf man sich gerade befindet und geben die Position und den Namen des Datei
+					innerhalb des aktuellen Webpräsenz an.
+					<p>
+						<ul>
+							<li>Keine externe Adressauflösung</li>
+							<li>weniger Schreibarbeit</li>
+						</ul>
+					</p>
+				</section>
+				<section>
+					<h2>Bilder einbinden</h2>
+					&lt;img src="hier steht die Adresse zur Bilddatei"&gt;
+				</section>
+				<section>
+					<h2>IMG ist ein Leertag wie br</h2>
+					Es gibt kein Endetag und es wird nichts im eigentlichen Taginhalt erwartet. Alle Informationen
+					stehen in den Attributen des Tags.
+				</section>
+				<section>
+					<h2>Und nun wollen wir das aber noch besser aufhübschen</h2>
+					Darum gehen wir nun an die Gestaltung mit CSS.
+				</section>
+				<section>
+					<section>
+						<h1>CSS</h1>
+						<ul>
+							<li><b>C</b>ascading</li>
+							<li><b>S</b>tyle</li>
+							<li><b>S</b>heets</li>
+						</ul>
+					</section>
+					<section>
+						CSS (Cascading Style Sheets, zu deutsch „Mehrstufige Formatvorlagen“) ist eine Formatierungssprache für HTML-Dokumente.
+						Durch CSS erreicht man die Trennung von Inhalt und Design.
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Ein erstes Beispiel</h2>
+					</section>
+					<section>
+						Das <code>style</code>-Attribut kann an jedem beliebigen Element hinzugefügt werden
+						und enthält eine Menge von Formatierungsanweisungen.
+						<pre><code data-trim>
+					    <p style="color: red; border: 1px solid blue;">
+					        Alles in rot mit blauem Rahmen!
+					    </p>
+						</code></pre>
+						<p style="color: red; border: 1px solid blue;">
+								Alles in rot mit blauem Rahmen!
+						</p>
+					</section>
+					<section>
+						Es gibt eine Vielzahl von CSS-Eigenschaften zur Textformatierung, Positionierung,
+						Ausrichtung, Farben, Hintergründe, Rahmen, ...<br>
+						Alle HTML Elemente können auf diese Weise beliebig verändert werden.<br>
+						Eine Referenz findet sich auf <a href="https://wiki.selfhtml.org/wiki/Referenz:CSS/Eigenschaften">Self-HTML</a>.
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h1>Formatierung und Darstellung</h1>
+					</section>
+					<section>
+						<h2>Schriftformatierung</h2>
+						<pre><code data-trim>
+					    <p style="font-size: 18px; font-family: 'Times New Roman'; text-shadow: 3px 3px #ccc;">
+					    Es <span style="color: green;">grünt</span>
+									so <span style="color: green;">grün</span>
+									wenn Spaniens Blüten blüh'n!
+					    </p>
+						</code></pre>
+						<p style="font-size: 18px; font-family: 'Times New Roman'; text-shadow: 3px 3px #ccc;">
+						Es <span style="color: green;">grünt</span>
+								so <span style="color: green;">grün</span>
+								wenn Spaniens Blüten blüh'n!
+						</p>
+						<p style="text-align:left; font-size: small !important;" >
+							<a href="https://wiki.selfhtml.org/wiki/CSS/Eigenschaften/Textformatierung">Referenz</a>
+						</p>
+					</section>
+
+					<section>
+						<h2>Schriftgröße</h2>
+						<pre><code data-trim>
+							<p style="font-size: 18px;">Ein Text!</p>
+							<p style="font-size: 10px; ">Ein Text!</p>
+							<p style="font-size: 1.5em; ">Ein Text!</p>
+							<p style="font-size: larger; ">Ein Text!</p>
+							<p style="font-size: smaller; ">Ein Text!</p>
+						</code></pre>
+						<p style="font-size: 18px !important;">Ein Text!</p>
+						<p style="font-size: 10px !important; ">Ein Text!</p>
+						<p style="font-size: 1.5em !important; ">Ein Text!</p>
+						<p style="font-size: larger !important; ">Ein Text!</p>
+						<p style="font-size: smaller !important; ">Ein Text!</p>
+						<p style="text-align:left; font-size: small !important;" >
+							<a href="https://wiki.selfhtml.org/wiki/CSS/Eigenschaften/Schriftformatierung/font-size">Referenz</a>
+						</p>
+					</section>
+
+					<section>
+						<h2>Farben</h2>
+						<pre><code data-trim>
+							<span style="color: red;">rot</span>,
+							<span style="color: green;">grün</span>,
+							<span style="color: blue;">blau</span>,
+							<span style="color: #FFFFFF; background-color: #000;">weiß auf schwarz</span>
+						</code></pre>
+						<span style="color: red;">rot</span>,
+						<span style="color: green;">grün</span>,
+						<span style="color: blue;">blau</span>,
+						<span style="color: #FFFFFF; background-color: #000;">weiß auf schwarz</span>
+						<p style="text-align:left; font-size: small !important;" >
+							<a href="https://wiki.selfhtml.org/wiki/CSS/Eigenschaften/Textformatierung/color">Referenz</a>,
+							<a href="https://wiki.selfhtml.org/wiki/Grafik/Farben">Farben</a>,
+							<a href="https://wiki.selfhtml.org/wiki/Grafik/Farbpaletten#Farbnamen">Farbnamen</a>
+						</p>
+					</section>
+
+					<section>
+						<h2>Textausrichtung</h2>
+						<pre><code data-trim>
+							<p style="text-align: left;">Text links ausgerichtet!</p>
+							<p style="text-align: center;">Text mittig ausgerichtet!</p>
+							<p style="text-align: right;">Text rechts ausgerichtet!</p>
+						</code></pre>
+						<p style="text-align: left;">Text links ausgerichtet!</p>
+						<p style="text-align: center;">Text mittig ausgerichtet!</p>
+						<p style="text-align: right;">Text rechts ausgerichtet!</p>
+						<p style="text-align:left; font-size: small !important;" >
+							<a href="https://wiki.selfhtml.org/wiki/CSS/Eigenschaften/Textausrichtung">Referenz</a>
+						</p>
+					</section>
+				</section>
+
+				<section>
+					<h1>Und nun Ihr</h1>
+					Probiert die Textdarstellung in Eurem Text aus!
+				</section>
+
+				<section>
+					<section>
+						<h1>Box Modell</h1>
+						Der Browser zeichnet alle Elemente als Rechtecke mit bestimmten Eigenschaften. Jedes Rechteck (oder Box)
+						besteht aus dem Inhaltsbereich mit dem eigentlichen Inhalt (Text, Bilder, ...) sowie einem Innenabstand (padding),
+						einem Rahmen (border) und einem Außenabstand (margin).
+					</section>
+
+					<section>
+						<h2>Box Modell</h2>
+
+						<p>Alle Elemente folgen dem sogenannten <b>Box Modell</b>, das die
+							grundsätzliche Darstellung und Ausrichtung eines Elements beschreibt.</p>
+						<img style="width: 50%;" src="https://wiki.selfhtml.org/images/thumb/f/f3/Box-Modell.svg/1200px-Box-Modell.svg.png">
+						<p style="text-align:left; font-size: small !important;" >
+							<a href="https://wiki.selfhtml.org/wiki/CSS/Tutorials/Einstieg/Box-Modell">Referenz</a>
+						</p>
+					</section>
+
+					<section>
+						<h2>Abstände &amp; Rahmen</h2>
+						<pre><code data-trim>
+							<div style="margin: 5px; border: 1px solid red; border-radius: 5px ; padding: 5px;">Text im Kasten</div>
+							<div style="margin: 0px; border: 1px dashed blue; padding: 0px;">Text im Kasten</div>
+							<div style="margin: 1px; border: 1px dotted green; padding: 20px;">Text im Kasten</div>
+						</code></pre>
+						<div style="margin: 5px !important; border: 1px solid red !important; border-radius: 5px !important; padding: 5px !important;">Text im Kasten</div><br>
+						<div style="margin: 0px !important; border: 1px dashed blue !important; padding: 0px !important;">Text im Kasten</div><br>
+						<div style="margin: 1px !important; border: 1px dotted green !important; padding: 20px !important;">Text im Kasten</div><br>
+
+						<p style="text-align:left; font-size: small !important;" >
+							<a href="https://wiki.selfhtml.org/wiki/Referenz:CSS/Eigenschaften/margin">Abstand</a>,
+							<a href="https://wiki.selfhtml.org/wiki/Referenz:CSS/Eigenschaften/border">Rahmen</a>
+						</p>
+					</section>
+
+					<section>
+						<h2>Größe</h2>
+						<p>Mit <code>width</code> und <code>height</code> kannman Breite und Höhe jedes Elements angeben.
+							Die Angaben können in Pixel, Prozent oder weiteren Maßeinheiten erfolgen.
+						</p>
+						<pre><code data-trim>
+							<div style="border: 1px solid red; width: 100px; height: 50px;">&nbsp;</div>
+							<div style="border: 1px dashed blue; width: 20%;">&nbsp;</div>
+							<div style="border: 1px dotted green; width: 20px; height: 10px;">&nbsp;</div>
+						</code></pre>
+						<div style="border: 1px solid red; width: 100px; height: 50px;">&nbsp;</div><br>
+						<div style="border: 1px dashed blue; width: 20%;">&nbsp;</div><br>
+						<div style="border: 1px dotted green; width: 20px; height: 10px;">&nbsp;</div><br>
+
+						<p style="text-align:left; font-size: small !important;" >
+							<a href="https://wiki.selfhtml.org/wiki/CSS/Eigenschaften/Gr%C3%B6%C3%9Fenangaben/width">Breite</a>,
+							<a href="https://wiki.selfhtml.org/wiki/CSS/Eigenschaften/Gr%C3%B6%C3%9Fenangaben/height">Höhe</a>,
+							<a href="https://wiki.selfhtml.org/wiki/CSS/Wertetypen/Zahlen,_Ma%C3%9Fe_und_Ma%C3%9Feinheiten">Maßeinheiten</a>
+						</p>
+					</section>
+
+					<section>
+						<h2>Hintergrundfarbe</h2>
+						<pre><code data-trim>
+							<div style="border: 1px solid black; border-radius: 5px ; background-color: LightCoral;">Text im Kasten</div>
+							<div style="border: 1px solid black; background-color: LightSkyBlue;">Text im Kasten</div>
+							<div style="border: 1px solid black; background-color: LightGreen;">Text im Kasten</div>
+						</code></pre>
+						<div style="border: 1px solid black; border-radius: 5px ; background-color: LightCoral;">Text im Kasten</div><br>
+						<div style="border: 1px solid black; background-color: LightSkyBlue;">Text im Kasten</div><br>
+						<div style="border: 1px solid black; background-color: LightGreen;">Text im Kasten</div><br>
+
+						<p style="text-align:left; font-size: small !important;" >
+							<a href="https://wiki.selfhtml.org/wiki/Referenz:CSS/Eigenschaften/margin">Abstand</a>,
+							<a href="https://wiki.selfhtml.org/wiki/Referenz:CSS/Eigenschaften/border">Rahmen</a>
+						</p>
+					</section>
+
+					<section>
+						<h2>Hintergrundbild</h2>
+						<pre><code data-trim>
+							<div style="background-image: url(bilder/Tux.png); background-size: 10%;
+								background-repeat: no-repeat; height: 100px; border: 1px solid black; ">Text vor Hintergrundbild</div>
+						</code></pre>
+						<div style="background-image: url(bilder/Tux.png); background-size: 10%; background-repeat: no-repeat; height: 100px; border: 1px solid black; ">Text vor Hintergrundbild</div>
+
+						<p style="text-align:left; font-size: small !important;" >
+							<a href="https://wiki.selfhtml.org/wiki/Referenz:CSS/Eigenschaften/margin">Abstand</a>
+						</p>
+					</section>
+				</section>
+
+				<section>
+					<h1>Und nun Ihr</h1>
+					Probiert die Rahmen, Abstände, etc. in Eurem Dokument aus!
+				</section>
+
+				<section>
+					<section>
+						<h1>Layout und Ausrichtung</h1>
+					</section>
+
+					<section>
+						<h2>Ausrichtung von Elementen</h2>
+						<p>Es gibt zwei Arten von Elementen: <code>block</code> und <code>inline</code>.</p>
+						<p>
+							<code>block</code> Elemente (z.B. <code>div</code> oder <code>p</code>) werden
+							üblicherweise untereinander angeordnet und <code>inline</code> Elemente (z.B.
+							<code>span</code> oder <code>a</code>) nebeneinander, z.B. im Fließtext.
+						</p>
+						<p style="text-align:left; font-size: small !important;" >
+							<a href="https://wiki.selfhtml.org/wiki/CSS/Tutorials/Ausrichtung/display_und_position#display">display</a>,
+							<a href="https://wiki.selfhtml.org/wiki/CSS/Eigenschaften/Positionierung/float">float</a>
+						</p>
+					</section>
+
+					<section>
+						<h2><code>display: block</code></h2>
+						<pre><code data-trim>
+							<div style="border: 1px solid black; display: block;">Text1</div>
+							<div style="border: 1px solid black; display: block;">Text2</div>
+						</code></pre>
+						<div style="border: 1px solid black; display: block;">Text1</div>
+						<div style="border: 1px solid black; display: block;">Text2</div>
+
+						<p style="text-align:left; font-size: small !important;" >
+							<a href="https://wiki.selfhtml.org/wiki/CSS/Tutorials/Ausrichtung/display_und_position#display">display</a>,
+							<a href="https://wiki.selfhtml.org/wiki/CSS/Eigenschaften/Positionierung/float">float</a>
+						</p>
+					</section>
+
+					<section>
+						<h2><code>display: inline</code></h2>
+						<pre><code data-trim>
+							<div style="border: 1px solid black; display: inline;">Text1</div>
+							<div style="border: 1px solid black; display: inline;">Text2</div>
+						</code></pre>
+						<div style="border: 1px solid black; display: inline;">Text1</div>
+						<div style="border: 1px solid black; display: inline;">Text2</div>
+
+						<p style="text-align:left; font-size: small !important;" >
+							<a href="https://wiki.selfhtml.org/wiki/CSS/Tutorials/Ausrichtung/display_und_position#display">display</a>,
+							<a href="https://wiki.selfhtml.org/wiki/CSS/Eigenschaften/Positionierung/float">float</a>
+						</p>
+					</section>
+
+					<section>
+						<h2>Typisches Seitenlayout</h2>
+						<pre><code data-trim>
+							<div style="border: 1px solid black;">Kopfzeile</div>
+							<div style="border: 1px solid black;">
+								<div style="border: 1px solid black; float: left; width: 20%; height: 100%">Navigation</div>
+								<div style="border: 1px solid black; float: left; width: 70%; height: 100%">Inhalt</div>
+								<div style="clear: both;">&nbsp;</div>
+							</div>
+							<div style="border: 1px solid black;">Fußzeile</div>
+						</code></pre>
+						<div style="border: 1px solid black;">Kopfzeile</div>
+						<div style="border: 1px solid black;">
+								<div style="border: 1px solid black; float: left; width: 20%; height: 100%">Navigation</div>
+								<div style="border: 1px solid black; float: left; width: 70%; height: 100%">Inhalt</div>
+								<div style="clear: both;">&nbsp;</div>
+						</div>
+						<div style="border: 1px solid black;">Fußzeile</div>
+
+						<p style="text-align:left; font-size: small !important;" >
+							<a href="https://wiki.selfhtml.org/wiki/CSS/Tutorials/Ausrichtung/display_und_position#display">display</a>,
+							<a href="https://wiki.selfhtml.org/wiki/CSS/Eigenschaften/Positionierung/float">float</a>
+						</p>
+					</section>
+
+					<section>
+						<h2>Typisches Seitenlayout</h2>
+						Während man früher of Tabellen zur Positionierung von Elementen verwendet hat, würde man
+						heutzutage eher das FlexBox- oder Grid-Layout verwenden, aber das führt für heute zu weit...
+						<p style="text-align:left; font-size: small !important;" >
+							<a href="https://wiki.selfhtml.org/wiki/CSS/Eigenschaften/Flexbox">FlexBox</a>,
+							<a href="https://wiki.selfhtml.org/wiki/CSS/Eigenschaften/grid">Grid</a>
+						</p>
+					</section>
+				</section>
+
+				<section>
+					<h1>Und nun Ihr</h1>
+					Baut eine Kopfzeile, Fußzeile, ggf. Seitenleiste ein!<br>
+					Nutzt dabei ggf. auch Hintergrundfarben oder -bilder.
+				</section>
+
+				<section>
+					<section>
+						<h1>Definition von CSS Regeln</h1>
+					</section>
+
+					<section>
+						Die Definition von Eigenschaft kann wie bisher über das <code>style</code> Attribut erfolgen.
+						Allerdings gibt es hierbei sehr viel Wiederholung, wenn man den gleichen Stil für viele Elemente
+						verwenden will. Daher kann man die CSS-Eigenschaften auch für die ganze Datei anhand von
+						sogenannten Selektoren definieren.
+					</section>
+
+					<section>
+						<pre><code><script type="text/template">
+<!DOCTYPE html>
+<html>
+		<head>
+				<meta charsset="utf-8" />
+				<title>Titel der Seite</title>
+				<style>
+					body { background-color: green; }
+					p { font-family: monospace; }
+					a { color: green; }
+				</style>
+		</head>
+		<body>Hier ist der Inhalt der Seite</body>
+</html>
+</script></code></pre>
+					</section>
+
+					<section>
+						<h2>CSS Definition im <code>style</code> Element</h2>
+						Das <code>style</code> Element innerhalb des <code>head</code> Elements
+						oben in der HTML-Datei kann eine Vielzahl von Regeln enthalten.
+						<pre><code data-trim>
+							<head>
+								<style>
+									body { background-color: green; }
+									p { font-family: monospace; }
+									a { color: green; }
+								</style>
+							</head>
+						</code></pre>
+
+						<p style="text-align:left; font-size: small !important;" >
+							<a href="https://wiki.selfhtml.org/wiki/CSS/Tutorials/Einstieg/Stylesheets_einbinden#Formate_zentral_in_einem_style-Element_festlegen">Einbinden von CSS</a>,
+							<a href="https://wiki.selfhtml.org/wiki/HTML/Kopfdaten/style">style Element</a>
+						</p>
+					</section>
+
+					<section>
+						<h2>CSS Definition in einer Datei</h2>
+						Alternativ kann man auch alle Regeln in eine eigene Datei schreiben und diese
+						in einem <code>link</code> Element referenzieren:
+						<pre><code data-trim>
+							<head>
+								<link rel="stylesheet" href="stylesheet.css">
+							</head>
+						</code></pre>
+						Die Datei sollte die Dateiendung <code>.css</code> haben.
+
+						<p style="text-align:left; font-size: small !important;" >
+							<a href="https://wiki.selfhtml.org/wiki/CSS/Tutorials/Einstieg/Stylesheets_einbinden#Einbinden_einer_externen_Datei">Einbinden von CSS</a>,
+							<a href="https://wiki.selfhtml.org/wiki/HTML/Kopfdaten/style">style Element</a>
+						</p>
+					</section>
+
+					<section>
+						<h2>CSS Selektoren</h2>
+						Mittels sogenannter Selektoren kann man die Style-Attribute an die HTML Elemente binden:
+						<pre><code data-trim>
+							<style>
+								body { background-color: green; }
+								.myclass { font-family: monospace; }
+								#myid { color: green; }
+							</style>
+						</code></pre>
+
+						<p style="text-align:left; font-size: small !important;" >
+							<a href="https://wiki.selfhtml.org/wiki/CSS/Selektoren">Selektoren</a>
+						</p>
+					</section>
+
+					<section>
+						<h2>CSS Selektoren</h2>
+
+						Diese können entweder für alle Elemente eines Typs (im Beispiel <code>body</code>),
+						einer Klasse (<code>&lt;div class="myclass"&gt; ... &lt;/div&gt;</code>) oder einem Element mit einer
+						bestimmten, eindeutigen ID (<code>&lt;div id="myid"&gt; ... &lt;/div&gt;</code>) zugewiesen werden.
+
+						<p style="text-align:left; font-size: small !important;" >
+							<a href="https://wiki.selfhtml.org/wiki/CSS/Selektoren">Selektoren</a>
+						</p>
+					</section>
+				</section>
+
+				<section>
+					<h1>Und nun Ihr</h1>
+					Verschiebt alle <code>style</code> in ein <code>style</code> Element im Kopfteil der HTML Seite.
+				</section>
+
+				<section>
+					<section>
+						<h1>Teil 2</h1>
+					</section>
+
+					<section>
+						<ul>
+						<li>Kurze Wiederholung</li>
+						<li>Die richtigen Werkzeuge</li>
+						<li>Trennen der Seite in HTML und CSS, Aufteilen der Seite in Abschnitte</li>
+						<li>Bauen einer Präsentation</li>
+						<li>Kurzer Exkurs zu freier Software</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Kurze Wiederholung</h2>
+					</section>
+
+					<section>
+						<h2>HTML</h2>
+						Elemente stehen in spitzen Klammern und haben haben i.d.R. ein Start-Tag und ein Ende-Tag.
+						Zusätzliche Attribute können weitere Angaben machen.
+						<pre><code data-trim>
+								<element attribut1="blabla" attribut2="nochwas">weiterer HTML Inhalt</element>
+						</code></pre>
+						<pre><code data-trim>
+								<a href="http://irgendwo.de/" target="_blank">Mein Link</a>
+						</code></pre>
+					</section>
+
+					<section>
+						HTML-Elemente, die wir schon kennen gelernt haben:<br>
+						<ul>
+							<li>&lt;section&gt;&lt;/section&gt;, &lt;div&gt;&lt;/div&gt;</li>
+							<li>&lt;p&gt;&lt;/p&gt;</li>
+							<li>&lt;br&gt;</li>
+							<li>&lt;em&gt;&lt;/em&gt; oder &lt;i&gt;&lt;/i&gt;</li>
+							<li>&lt;strong&gt;&lt;/strong&gt; oder &lt;b&gt;&lt;/b&gt;</li>
+							<li>&lt;small&gt;&lt;/small&gt;</li>
+							<li>&lt;a&gt;&lt;/a&gt;</li>
+							<li>&lt;img&gt;</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>CSS</h2>
+						<p>
+							Mit CSS kann man das Aussehen von Elementen steuern. Dazu gehören
+							Ausrichtung, Textformatierung, grafische Effekte, usw.
+						</p>
+						<p>
+							CSS-Regeln können entweder für jedes Element individuell mittels <code>style</code> Attribut
+							oder global anhand von Selektoren (z.B. per <code>class</code> Attribut)
+							für viele Elemente auf einmal definiert werden.
+						</p>
+					</section>
+
+					<section>
+						Beispiel:<br>
+						<pre><code data-trim>
+					    <p style="font-size: 18px; font-family: 'Times New Roman'; text-shadow: 3px 3px #ccc;">
+					    Es <span style="color: green;">grünt</span>
+									so <span style="color: green;">grün</span>
+									wenn Spaniens Blüten blüh'n!
+					    </p>
+						</code></pre>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h1>Die richtigen Werkzeuge</h1>
+					</section>
+
+					<section>
+						<h2>Der richtige Editor</h2>
+						Ein guter Texteditor bietet <em>Syntax Highlighting</em> und unterstützt
+						die Benutzer*Innen beim Erstellen von Webseiten durch viele kleine Hilfestellungen.<br>
+						<img src="bilder/editor-syntax-highlighting.png">
+					</section>
+					<section>
+						Beispiele:
+						<ul>
+							<li><a href="https://www.geany.org/">Geany</a> (gibt es auch auf Eurem Raspberry Pi!)</li>
+							<li><a href="https://notepad-plus-plus.org/">Notepad++</a> (nur Windows)</li>
+							<li><a href="https://atom.io/">Atom</a></li>
+							<li><a href="https://code.visualstudio.com/">Visual Studio Code</a> (ausgewachsene Entwicklungsumgebung)</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Dem Browser unter die Haube schauen</h2>
+						Ein Browser macht eine ganze Menge, um eine Webseite darzustellen.
+						Er lässt sich dabei aber tief in die Karten schauen, sodass man sich auch
+						abschauen kann, wie man etwas macht, das man auf einer Webseite sieht.
+					</section>
+					<section>
+						Eine einfache <a href="https://forum-mannheim.de/">Webseite</a>:<br>
+						<img src="bilder/Eine-Webseite.png">
+					</section>
+
+					<section>
+						Schauen wir doch mal rein!<br>
+						<br>
+						Ein Browser hat alles dabei, um unter die Haube zu schauen:<br>
+
+						Developer Tools für Neugierige!
+					</section>
+
+					<section>
+						Der Seitenquelltext:<br>
+						<img src="bilder/Eine-Webseite-Quelltext.png">
+					</section>
+
+					<section>
+						Netzwerkansicht: was wird alles vom WebServer geladen<br>
+						<img src="bilder/Eine-Webseite-DevTools-Netzwerk.png">
+					</section>
+
+					<section>
+						<i>Element Untersuchen</i> (Inspect) erlaubt den Blick ins innere: der Document Object Tree (DOM)<br>
+						<img src="bilder/Eine-Webseite-DevTools-Inspect.png">
+					</section>
+
+					<section>
+						Kurze Demo...
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Trennen der Seite in HTML und CSS</h2>
+						<ul>
+							<li>Saubere Trennnung von Inhalt und Darstellung</li>
+							<li>Widerverwendbarkeit von Regeln, auch für mehrere Dateien oder Projekte</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>CSS Definition in einer Datei</h2>
+						Man kann alle CSS Regeln in eine eigene Datei schreiben und diese
+						in einem <code>link</code> Element referenzieren:
+						<pre><code data-trim>
+							<head>
+								<link rel="stylesheet" href="stylesheet.css">
+							</head>
+						</code></pre>
+						Die Datei sollte die Dateiendung <code>.css</code> haben.
+
+						<p style="text-align:left; font-size: small !important;" >
+							<a href="https://wiki.selfhtml.org/wiki/CSS/Tutorials/Einstieg/Stylesheets_einbinden#Einbinden_einer_externen_Datei">Einbinden von CSS</a>,
+							<a href="https://wiki.selfhtml.org/wiki/HTML/Kopfdaten/style">style Element</a>
+						</p>
+					</section>
+				</section>
+
+				<section>
+					<h1>Und nun Ihr</h1>
+					<p>
+						Erstellt eine eigene CSS-Datei <code>stylesheet.css</code> und bindet diese in Eurer Seite ein.<br>
+						Dann verschiebt alle CSS-Regeln in diese Datei.
+					</p>
+					<p>
+						Hinweis: ggf. ist es einfacher, alle style-Attribute zu löschen und nur den Text und die Bilder
+						in die neue Datei zu übernehmen...
+					</p>
+				</section>
+
+				<section>
+					<section>
+						<h2>Aufteilen der Seite in Abschnitte</h2>
+						Als Vorbereitung zur Verwendung unserer Seite als Grundlage einer
+						Präsentation trennen wir den Inhalt in Bereiche auf. Dazu setzen wir
+						die einzelnen Teile jeweils in eine <code>&lt;section&gt;</code>.
+					</section>
+
+					<section>
+						<div style="font-size: smaller;">
+						<pre><code data-trim>
+							&lt;html&gt;
+								&lt;head&gt;
+									...
+								&lt;/head&gt;
+								&lt;body&gt;
+									<section>
+										Erster Teil: Über mich
+									</section>
+
+									<section>
+										Zweiter Teil: meine Hobbies
+									</section>
+
+									<section>
+										Dritter Teil: Sonstiges
+									</section>
+								&lt;/body&gt;
+							&lt;/html&gt;
+						</code></pre>
+					</div>
+					</section>
+				</section>
+
+				<section>
+					<h1>Und nun Ihr</h1>
+					Teilt Eure Seite mithilfe von <code>&lt;section&gt;</code> in verschiedene Teile auf.<br>
+					Diese Bereiche verwenden wir später als Grundlage für die Erstellung einer Präsentation.
+				</section>
+
+				<section>
+					<h2>Reveal.js: Präsentationen mit HTML bauen</h2>
+					<p>
+						Diese Präsentation ist mit <em>reveal.js</em> erstellt.
+						Alles was man zum Erstellen braucht, sind ein Texteditor und ein Webbrowser!
+					</p>
+					<p>
+						Die Möglichkeiten von <em>reveal.js</em> könnt Ihr direkt in der <a href="demo.html">Demo</a> ausprobieren...
+					</p>
+	        <p style="text-align:left; font-size: small !important;" >
+	        	<a href="https://revealjs.com/">reveal.js</a>,
+	        	<a href="https://ebildungslabor.de/blog/revealjs/">Deutsche Einführung</a>
+	        </p>
+				</section>
+
+				<section>
+					<h1>Was ist Reveal.JS?</h1>
+					<a href="https://revealjs.com">revealjs.com</a>
+				</section>
+				<section>
+					<h2>Warum machen wir das in diesem Zusammenhang?</h2>
+					<section>
+						Zur Übung
+					</section>
+					<section>
+						Zur Verdeutlichung, was wir gerade gelernt haben
+					</section>
+					<section>
+						Zum weiteren Probieren<br>
+						Und damit etwas vom Kurs übrig bleibt, das auch ohne Webspace und Webserver verwendet werden kann.
+					</section>
+				</section>
+				<section>
+					<h2>Möglichkeiten der Individualisierung</h2>
+					<section>
+						<h3><a href="https://revealjs.com/vertical-slides/">Vertical Slides</a></h3>
+					</section>
+					<section>
+						<h3><a href="https://revealjs.com/themes/">Themes</a></h3>
+					</section>
+					<section>
+						<h3><a href="https://revealjs.com/transitions/">Transitions</a></h3>
+					</section>
+					<section>
+						<h3><a href="https://revealjs.com/config/">Customization / Anpassung</a></h3>
+					</section>
+				</section>
+
+				<section>
+					<h2>Beispiel einer angepassten Seite</h2>
+					<a href="index_beispiel2.html">Begriffserklärung HTML</a>
+				</section>
+
+				<section>
+					<section>
+						<h1>Und nun Ihr</h1>
+						<p>Wir wollen nun unsere eigene Seite in eine Präsentation umbauen.</p>
+						<p>Alternativ könnt Ihr natürlich auch etwas komplett Neues machen...</p>
+					</section>
+
+					<section>
+						Als Starthilfe könnt Ihr Euch <em>reveal.js</em>
+						<a href="https://github.com/hakimel/reveal.js/archive/master.zip">hier runterladen</a>
+						und direkt darin anfangen, indem Ihr die Seite <code>index.html</code> modifiziert
+						und Eure eigenen Inhalte einfügt.
+					</section>
+				</section>
+
+				<section>
+					<section>
+		        <h2>Freie Software (Open Source)</h2>
+						<blockquote>
+						Als Open Source (aus englisch open source, wörtlich offene Quelle) wird Software bezeichnet,
+						deren Quelltext öffentlich und von Dritten eingesehen, geändert und genutzt werden kann.
+						Open-Source-Software kann meistens kostenlos genutzt werden.
+						</blockquote>
+						<p style="text-align:left; font-size: small !important;" >
+							<a href="https://fsfe.org/freesoftware/freesoftware.de.html">Was ist Freie Software?</a>,
+							<a href="https://de.wikipedia.org/wiki/Open_Source">Wikipedia: Open Source</a>
+						</p>
+					</section>
+
+					<section>
+						<h2>Verwenden von freier Software</h2>
+						Freie Software kann i.d.R. kostenlos aus dem Internet runtergeladen und von jeder/m nach Belieben verwendet werden.
+					</section>
+
+					<section>
+						<h2>Beispiele freier Software</h2>
+						Firefox, Chromium, Thunderbird, OpenOffice, Linux, Notepad++, reveal.js, viele Programmiersprachen und Entwicklungstools, ...
+					</section>
+
+					<section>
+						<h2>Ändern oder erweitern von freier Software</h2>
+						Im Prinzip kann jeder zu freier Software beitragen, mit Code, Dokumentation, Hilfestellung bei Problemen, ...
+						<p style="text-align:left; font-size: small !important;" >
+							<a href="https://github.com/">GitHub - Heimat für viele OpenSource Projekte</a>
+						</p>
+					</section>
+
+				</section>
+
+
+				<section>
+					Fertig! Für heute zumindest...
+				</section>
+
+				<section>
+					Wie war's?<br>
+					Was hat Euch gefallen, was nicht?<br>
+					Was habt Ihr mitgenommen?<br>
+					Was probiert Ihr jetzt vielleicht selbst mal zu Hause aus?
+					Was würde Euch sonst interessieren?
+				</section>
+
+
+
+			</div>
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				hash: true,
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/highlight/highlight.js' },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>

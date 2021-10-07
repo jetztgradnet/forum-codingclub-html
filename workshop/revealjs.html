@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>Was ist Reveal.JS?</h1>
+					<a href="https://revealjs.com">revealjs.com</a>
+				</section>
+				<section>
+					<h2>Warum machen wir das in diesem Zusammenhang?</h2>
+					<section>
+						Zur Übung
+					</section>
+					<section>
+						Zur Verdeutlichung, was wir gerade gelernt haben
+					</section>
+					<section>
+						Zum weiteren Probieren<br>
+						Und damit etwas vom Kurs übrig bleibt, das auch ohne Webspace und Webserver verwendet werden kann. 
+					</section>
+				</section>
+				<section>
+					<h2>Möglichkeiten der Individualisierung</h2>
+					<section>
+						<h3><a href="https://revealjs.com/vertical-slides/">Vertical Slides</a></h3>
+					</section>
+					<section>
+						<h3><a href="https://revealjs.com/themes/">Themes</a></h3>
+					</section>
+					<section>
+						<h3><a href="https://revealjs.com/transitions/">Transitions</a></h3>
+					</section>
+					<section>
+						<h3><a href="https://revealjs.com/config/">Customization / Anpassung</a></h3>
+					</section>
+				</section>
+				<section>
+					<h2>Beispiel einer angepassten Seite</h2>
+					<a href="index_beispiel2.html">Begriffserklärung HTML</a>
+				</section>
+			</div>
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				hash: true,
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/highlight/highlight.js' },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>

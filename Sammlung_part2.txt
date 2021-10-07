@@ -1,0 +1,25 @@
+Einbindung Fremdinhalte
+<img>
+<a>
+<link>
+
+Unterschied Inhalt und Attribut
+
+Weitere Tags zur Aufbereitung:
+<cite>
+<code>
+<sub>
+<sup>
+<hr>
+<table>
+
+Weitere Themen, Ausblick
+Formulare
+Interaktion mit Hilfe von JavaScript
+Seiten on the fly generieren
+Frameworks im allgemeinen, bootstrap im speziellen
+Serverside mit Node evtl. mit einer Templateengine.
+Das wären aber eigene Workshops, die auch eine gewisse Infrastruktur voraussetzen würden.
+
+
+Weiterlernen: https://www.w3schools.com/ und https://wiki.selfhtml.org/   ( https://selfhtml.org/ )
